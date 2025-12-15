@@ -1,9 +1,3 @@
--- Création de la base Netflix
-CREATE DATABASE netflix_production;
-
--- Connexion à la base
-\c netflix_production;
-
 -- Tables de référence (pays, catégories)
 CREATE TABLE countries (
     country_id SERIAL PRIMARY KEY,
