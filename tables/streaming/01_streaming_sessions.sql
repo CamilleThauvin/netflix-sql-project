@@ -20,3 +20,17 @@ FROM streaming_sessions
 GROUP BY jour
 ORDER BY jour DESC
 LIMIT 7;
+
+-- Table des sessions de visionnage
+CREATE TABLE IF NOT EXISTS streaming_sessions (
+    session_id SERIAL PRIMARY KEY,
+    customer_id INT NOT NULL,
+    movie_id INT NOT NULL,
+    session_start_time TIMESTAMP NOT NULL,
+    session_duration_minutes INT,
+    device_type VARCHAR(20),  -- 'mobile', 'tv', 'web'
+    
+    CONSTRAINT fk_sessions_customer FOREIGN KEY (customer_id) REFERENCES customers(customer_id),
+    CONSTRAINT fk_sessions_movie FOREIGN KEY (movie_id) REFERENCES movies(movie_id)
+);
+
