@@ -7,3 +7,5 @@
 -- JOIN categorie c ON f.categorie_id = c.categorie_id
 -- GROUP BY category_name
 -- ORDER BY nb_titles DESC;
+
+
