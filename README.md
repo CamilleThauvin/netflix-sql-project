@@ -43,3 +43,18 @@ Exemples d'analyses fournies par les requêtes :
 - Temps de visionnage par utilisateur et par device.
 - Répartition et revenu théorique par type de plan d'abonnement.
 - Nombre de changements de plan par client.
+
+## 📊 Résultats Analytics (exemples)
+
+### Churn Analysis
+→ 4 clients sur 5 n'ont plus d'abonnement actif [capture d'écran]
+
+### ARPU par plan
+→ Focus upsell Basic → Premium [capture d'écran]
+
+
+## 🛠️ Technologies
+- **PostgreSQL** : base de données relationnelle
+- **Git/GitHub** : versionning et collaboration
+- **pgAdmin** : client SQL
+- **Cursor** : éditeur de code
