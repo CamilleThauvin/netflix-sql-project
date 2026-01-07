@@ -5,7 +5,7 @@
 -- avec au moins 10 lignes par table (sauf subscription_plans qui en a 5)
 --
 -- ORDRE D'EXÉCUTION :
--- 1. Tables de référence (countries, categorie, subscription_plans)
+-- 1. Tables de référence (countries, categories, subscription_plans)
 -- 2. Tables principales (customers, movies)
 -- 3. Tables dépendantes (customer_subscriptions, streaming_sessions, viewing_history, etc.)
 -- =====================================================
@@ -24,11 +24,11 @@ INSERT INTO countries (country_name) VALUES
 ON CONFLICT (country_name) DO NOTHING;
 
 -- =====================================================
--- 2. TABLE : CATEGORIE (Genres de films/séries)
+-- 2. TABLE : CATEGORIES (Genres de films/séries)
 -- =====================================================
 -- 20 genres Netflix populaires
 
-INSERT INTO categorie (category_name) VALUES
+INSERT INTO categories (category_name) VALUES
 ('Action'), ('Comédie'), ('Drame'), ('Thriller'), ('Science-fiction'),
 ('Horreur'), ('Romance'), ('Animation'), ('Documentaire'), ('Fantastique'),
 ('Aventure'), ('Policier'), ('Biographie'), ('Historique'), ('Musical'),
@@ -126,7 +126,7 @@ INSERT INTO customers (first_name, last_name, email, country, signup_date, is_ac
 -- =====================================================
 -- 20 films/séries Netflix populaires avec catégories et pays d'origine
 
-INSERT INTO movies (title, release_year, duration_minutes, categorie_id, country_id, rating, is_original) VALUES
+INSERT INTO movies (title, release_year, duration_minutes, category_id, country_id, rating, is_original) VALUES
 -- Netflix Originals célèbres
 ('Stranger Things', 2016, NULL, 5, 6, 8.70, TRUE),          -- Science-fiction, USA
 ('Squid Game', 2021, NULL, 4, 16, 8.00, TRUE),              -- Thriller, Corée du Sud
