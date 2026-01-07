@@ -14,9 +14,14 @@
 - [Installation et Configuration](#installation-et-configuration)
 - [Requêtes Analytics Disponibles](#requêtes-analytics-disponibles)
 - [Résultats et KPIs](#résultats-et-kpis)
+- [Dashboard Streamlit - Analyse du Churn](#dashboard-streamlit---analyse-du-churn)
 - [Structure du Projet](#structure-du-projet)
 - [Équipe](#équipe)
 - [Technologies Utilisées](#technologies-utilisées)
+- [Ressources et Documentation](#ressources-et-documentation)
+- [Contexte Académique](#contexte-académique)
+- [Licence](#licence)
+- [Remerciements](#remerciements)
 
 ---
 
@@ -163,33 +168,6 @@ Le script `init_database.sql` effectue automatiquement :
 -  Chargement de 393 lignes de données de test réalistes
 -  Vérification de l'intégrité des données
 
-### Vérification de l'Installation
-
-Après l'exécution, vous devriez voir :
-```
-Résultat de la vérification :
-┌──────────────────────┬───────────┐
-│     table_name       │ row_count │
-├──────────────────────┼───────────┤
-│ categories           │    20     │
-│ countries            │    20     │
-│ customer_subscriptions│   50     │
-│ customers            │    50     │
-│ movies               │    20     │
-│ payments             │    38     │
-│ streaming_sessions   │   100     │
-│ subscription_plans   │     5     │
-│ viewing_history      │    58     │
-│ watch_progress       │    32     │
-└──────────────────────┴───────────┘
-```
-
----
-
-## Requêtes Analytics Disponibles
-
-Notre projet propose **15+ requêtes SQL** réparties en 3 catégories :
-
 ### Analytics Streaming
 
 | Requête | Description | Complexité |
@@ -209,7 +187,7 @@ Notre projet propose **15+ requêtes SQL** réparties en 3 catégories :
 | `plan_changes.sql` | Nombre de changements de plan par client | GROUP BY + HAVING |
 | `monthly_revenue.sql` | Dashboard global des revenus (CA mensuel/annuel) | UNION ALL |
 
-### 📈 Analytics Avancés
+### Analytics Avancés
 
 | Requête | Description | Complexité |
 |---------|-------------|------------|
@@ -219,38 +197,6 @@ Notre projet propose **15+ requêtes SQL** réparties en 3 catégories :
 | `churn_rate.sql` | Calcul du taux de churn en pourcentage | CASE WHEN |
 | `arpu_metrics.sql` | ARPU (Average Revenue Per User) par plan | Complex calculation |
 | `plan_streaming_engagement.sql` | Engagement par plan d'abonnement | Multiple LEFT JOINs |
-
----
-
-## Résultats et KPIs
-
-### KPIs Globaux
-- **50 clients** inscrits (44 actifs, 6 churnés)
-- **44 abonnements actifs** en cours
-- **100 sessions de streaming** enregistrées
-- **Total temps de visionnage :** 5,000+ minutes
-
-### Insights Métier
-
-#### Revenus
-- **CA mensuel estimé :** ~600€/mois
-- **CA annuel projeté :** ~7,200€/an
-- **Plan le plus rentable :** Premium (17,99€/mois)
-
-#### Engagement
-- **Top 3 films les plus regardés :**
-  1. Stranger Things (multiple sessions)
-  2. Squid Game (très populaire en Asie)
-  3. The Crown (audience UK forte)
-
-- **Appareils préférés :**
-  - TV : 65% des sessions
-  - Mobile : 25% des sessions
-  - Web : 10% des sessions
-
-#### Churn Analysis
-- **Taux de churn :** ~12% (6 clients sur 50)
-- **Clients à risque :** Identifiés via l'analyse d'engagement
 
 ---
 
@@ -354,7 +300,7 @@ netflix-sql-project/
 
 ---
 
-## 📊 Dashboard Streamlit - Analyse du Churn
+## Dashboard Streamlit - Analyse du Churn
 
 ### Présentation
 
@@ -412,21 +358,6 @@ DB_PASSWORD = "votre_mot_de_passe"
 streamlit run streamlit_churn_dashboard.py
 ```
 
-### Captures d'écran
-
-#### Métriques Globales
-- Vue en temps réel du taux de churn
-- Répartition clients actifs/churnés
-
-#### Analyse par Plan
-- Graphiques comparatifs du churn par plan
-- Engagement utilisateur par plan
-
-#### Liste des Clients à Risque
-- Tableau interactif avec filtres
-- Coloration par niveau de risque
-- Informations détaillées (sessions, temps de visionnage, inactivité)
-
 ### Cas d'Usage
 
 #### Pour l'Équipe Marketing
@@ -453,7 +384,7 @@ streamlit run streamlit_churn_dashboard.py
 
 ---
 
-## 🎓 Contexte Académique
+## Contexte Académique
 
 ### Objectifs Pédagogiques Atteints
 ✅ Application des concepts de normalisation de bases de données
