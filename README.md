@@ -7,44 +7,44 @@
 
 ---
 
-## 📋 Table des Matières
-- [À Propos du Projet](#-à-propos-du-projet)
-- [Fonctionnalités](#-fonctionnalités)
-- [Architecture de la Base de Données](#-architecture-de-la-base-de-données)
-- [Installation et Configuration](#-installation-et-configuration)
-- [Requêtes Analytics Disponibles](#-requêtes-analytics-disponibles)
-- [Résultats et KPIs](#-résultats-et-kpis)
-- [Structure du Projet](#-structure-du-projet)
-- [Équipe](#-équipe)
-- [Technologies Utilisées](#-technologies-utilisées)
+## Table des Matières
+- [À Propos du Projet](#à-propos-du-projet)
+- [Fonctionnalités](#fonctionnalités)
+- [Architecture de la Base de Données](#architecture-de-la-base-de-données)
+- [Installation et Configuration](#installation-et-configuration)
+- [Requêtes Analytics Disponibles](#requêtes-analytics-disponibles)
+- [Résultats et KPIs](#résultats-et-kpis)
+- [Structure du Projet](#structure-du-projet)
+- [Équipe](#équipe)
+- [Technologies Utilisées](#technologies-utilisées)
 
 ---
 
-## 🎯 À Propos du Projet
+## À Propos du Projet
 
 Ce projet simule l'évolution d'une base de données Netflix, de ses débuts en tant que service de location de DVD vers sa transformation en plateforme de streaming moderne. 
 
 **Contexte Académique :** Projet SQL réalisé dans le cadre du MBA Big Data & IA, démontrant la maîtrise de la conception de bases de données relationnelles, des requêtes SQL complexes et de l'analyse de données.
 
 ### Objectifs Pédagogiques
-- ✅ Conception et modélisation de bases de données relationnelles
-- ✅ Maîtrise des concepts SQL avancés (JOIN, GROUP BY, agrégations)
-- ✅ Création de requêtes analytiques pour générer des insights métier
-- ✅ Gestion de projets collaboratifs avec Git/GitHub
+-  Conception et modélisation de bases de données relationnelles
+-  Maîtrise des concepts SQL avancés (JOIN, GROUP BY, agrégations)
+-  Création de requêtes analytiques pour générer des insights métier
+-  Gestion de projets collaboratifs avec Git/GitHub
 
 ---
 
-## 🚀 Fonctionnalités
+## Fonctionnalités
 
 Notre projet se concentre sur **deux fonctionnalités principales** :
 
-### 1. 📊 Système d'Abonnements Multi-niveaux
+### 1. Système d'Abonnements Multi-niveaux
 - Gestion de plans d'abonnement (Basic, Standard, Premium, Mobile, Family)
 - Suivi de l'historique des abonnements par client
 - Système de paiements avec méthodes multiples
 - Analyse des changements de plans et du churn
 
-### 2. 🎥 Système de Streaming et Analytics
+### 2. Système de Streaming et Analytics
 - Sessions de visionnage avec tracking du temps et des appareils
 - Historique complet de visionnage par client
 - Progression de lecture avec bookmarks (reprendre là où on s'est arrêté)
@@ -52,7 +52,7 @@ Notre projet se concentre sur **deux fonctionnalités principales** :
 
 ---
 
-## 🗄️ Architecture de la Base de Données
+## Architecture de la Base de Données
 
 ### Diagramme ERD
 ```
@@ -85,20 +85,20 @@ Notre projet se concentre sur **deux fonctionnalités principales** :
 
 ### Tables Principales
 
-#### 📑 **Référentiels**
+#### **Référentiels**
 - `countries` (20 pays) - Marchés Netflix internationaux
 - `categories` (20 genres) - Genres de films/séries
 - `subscription_plans` (5 plans) - Plans d'abonnement disponibles
 
-#### 👥 **Gestion Clients**
+#### **Gestion Clients**
 - `customers` (50 clients) - Informations clients avec statut actif/inactif
 - `customer_subscriptions` (50 abonnements) - Historique des abonnements
 - `payments` (38 paiements) - Historique des transactions
 
-#### 🎬 **Contenu**
+#### **Contenu**
 - `movies` (20 films/séries) - Catalogue Netflix avec originals
 
-#### 📺 **Streaming & Analytics**
+#### **Streaming & Analytics**
 - `streaming_sessions` (100 sessions) - Sessions de visionnage avec durée et device
 - `viewing_history` (58 historiques) - Historique complet avec taux de complétion
 - `watch_progress` (32 progressions) - Reprise de lecture avec position exacte
@@ -107,7 +107,7 @@ Notre projet se concentre sur **deux fonctionnalités principales** :
 
 ---
 
-## ⚙️ Installation et Configuration
+## Installation et Configuration
 
 ### Prérequis
 - PostgreSQL 12+ installé
@@ -142,10 +142,10 @@ Option B - Via pgAdmin :
 5. Charger et exécuter le fichier `init_database.sql`
 
 Le script `init_database.sql` effectue automatiquement :
-- ✅ Suppression des tables existantes
-- ✅ Création de toutes les tables dans le bon ordre
-- ✅ Chargement de 393 lignes de données de test réalistes
-- ✅ Vérification de l'intégrité des données
+-  Suppression des tables existantes
+-  Création de toutes les tables dans le bon ordre
+-  Chargement de 393 lignes de données de test réalistes
+-  Vérification de l'intégrité des données
 
 ### Vérification de l'Installation
 
@@ -170,45 +170,43 @@ Résultat de la vérification :
 
 ---
 
-## 📊 Requêtes Analytics Disponibles
+## Requêtes Analytics Disponibles
 
 Notre projet propose **15+ requêtes SQL** réparties en 3 catégories :
 
-### 🎯 Analytics Streaming
+### Analytics Streaming
 
 | Requête | Description | Complexité |
 |---------|-------------|------------|
-| `top_10_films.sql` | Top 10 des films par temps total de visionnage | ⭐⭐ JOIN + GROUP BY |
-| `watch_time_by_user.sql` | Temps de visionnage par utilisateur | ⭐⭐ JOIN + Agrégation |
-| `watch_time_by_device.sql` | Répartition par type d'appareil | ⭐ GROUP BY |
-| `daily_watch_time.sql` | Temps de visionnage journalier | ⭐⭐ Date functions |
-| `top_users_by_watch_time.sql` | Utilisateurs les plus actifs (TOP 10) | ⭐⭐ JOIN + LIMIT |
-| `viewing_history_analysis.sql` | Analyse de l'historique avec taux de complétion | ⭐⭐⭐ Multiple JOINs |
+| `top_10_films.sql` | Top 10 des films par temps total de visionnage | JOIN + GROUP BY |
+| `watch_time_by_user.sql` | Temps de visionnage par utilisateur | JOIN + Agrégation |
+| `watch_time_by_device.sql` | Répartition par type d'appareil | GROUP BY |
+| `daily_watch_time.sql` | Temps de visionnage journalier | Date functions |
+| `top_users_by_watch_time.sql` | Utilisateurs les plus actifs (TOP 10) | JOIN + LIMIT |
+| `viewing_history_analysis.sql` | Analyse de l'historique avec taux de complétion | Multiple JOINs |
 
-### 💰 Analytics Abonnements
+### Analytics Abonnements
 
 | Requête | Description | Complexité |
 |---------|-------------|------------|
-| `revenue_by_plan.sql` | Revenu mensuel et annuel par plan | ⭐⭐ LEFT JOIN + Agrégation |
-| `plan_changes.sql` | Nombre de changements de plan par client | ⭐⭐⭐ GROUP BY + HAVING |
-| `monthly_revenue.sql` | Dashboard global des revenus (CA mensuel/annuel) | ⭐⭐⭐ UNION ALL |
+| `revenue_by_plan.sql` | Revenu mensuel et annuel par plan | LEFT JOIN + Agrégation |
+| `plan_changes.sql` | Nombre de changements de plan par client | GROUP BY + HAVING |
+| `monthly_revenue.sql` | Dashboard global des revenus (CA mensuel/annuel) | UNION ALL |
 
 ### 📈 Analytics Avancés
 
 | Requête | Description | Complexité |
 |---------|-------------|------------|
-| `kpi_overview.sql` | KPIs globaux (clients, abonnements, sessions) | ⭐⭐ Subqueries |
-| `customer_activity.sql` | Répartition actifs/inactifs + clients churned | ⭐⭐ Multiple queries |
-| `churn_analysis.sql` | Taux de churn et clients à risque | ⭐⭐⭐ FILTER + Agrégations |
-| `churn_rate.sql` | Calcul du taux de churn en pourcentage | ⭐⭐ CASE WHEN |
-| `arpu_metrics.sql` | ARPU (Average Revenue Per User) par plan | ⭐⭐⭐ Complex calculation |
-| `plan_streaming_engagement.sql` | Engagement par plan d'abonnement | ⭐⭐⭐⭐ Multiple LEFT JOINs |
-
-**Légende :** ⭐ Simple | ⭐⭐ Moyen | ⭐⭐⭐ Avancé | ⭐⭐⭐⭐ Très avancé
+| `kpi_overview.sql` | KPIs globaux (clients, abonnements, sessions) | Subqueries |
+| `customer_activity.sql` | Répartition actifs/inactifs + clients churned | Multiple queries |
+| `churn_analysis.sql` | Taux de churn et clients à risque | FILTER + Agrégations |
+| `churn_rate.sql` | Calcul du taux de churn en pourcentage | CASE WHEN |
+| `arpu_metrics.sql` | ARPU (Average Revenue Per User) par plan | Complex calculation |
+| `plan_streaming_engagement.sql` | Engagement par plan d'abonnement | Multiple LEFT JOINs |
 
 ---
 
-## 📈 Résultats et KPIs
+## Résultats et KPIs
 
 ### KPIs Globaux
 - **50 clients** inscrits (44 actifs, 6 churnés)
@@ -218,12 +216,12 @@ Notre projet propose **15+ requêtes SQL** réparties en 3 catégories :
 
 ### Insights Métier
 
-#### 💵 Revenus
+#### Revenus
 - **CA mensuel estimé :** ~600€/mois
 - **CA annuel projeté :** ~7,200€/an
 - **Plan le plus rentable :** Premium (17,99€/mois)
 
-#### 📺 Engagement
+#### Engagement
 - **Top 3 films les plus regardés :**
   1. Stranger Things (multiple sessions)
   2. Squid Game (très populaire en Asie)
@@ -234,13 +232,13 @@ Notre projet propose **15+ requêtes SQL** réparties en 3 catégories :
   - Mobile : 25% des sessions
   - Web : 10% des sessions
 
-#### ⚠️ Churn Analysis
+#### Churn Analysis
 - **Taux de churn :** ~12% (6 clients sur 50)
 - **Clients à risque :** Identifiés via l'analyse d'engagement
 
 ---
 
-## 📁 Structure du Projet
+## Structure du Projet
 
 ```
 netflix-sql-project/
@@ -293,7 +291,7 @@ netflix-sql-project/
 
 ---
 
-## 👥 Équipe
+## Équipe
 
 **Projet réalisé par :**
 
@@ -310,7 +308,7 @@ netflix-sql-project/
 
 ---
 
-## 🛠️ Technologies Utilisées
+## Technologies Utilisées
 
 ### Base de Données
 - **PostgreSQL 12+** - Base de données relationnelle
@@ -330,7 +328,7 @@ netflix-sql-project/
 
 ---
 
-## 📚 Ressources et Documentation
+## Ressources et Documentation
 
 ### Documentation Officielle
 - [PostgreSQL Documentation](https://www.postgresql.org/docs/)
@@ -356,22 +354,15 @@ netflix-sql-project/
 ✅ Collaboration en équipe avec Git/GitHub  
 ✅ Documentation technique professionnelle  
 
-### Critères d'Évaluation
-- ✅ **Pertinence de la fonctionnalité** (10%) - Système d'abonnements + streaming
-- ✅ **Qualité du modèle** (25%) - 10 tables normalisées avec contraintes
-- ✅ **Qualité du code SQL** (30%) - 15+ requêtes fonctionnelles
-- ✅ **Documentation** (10%) - README complet avec diagrammes
-- ✅ **Travail d'équipe** (10%) - Répartition via Git branches
-
 ---
 
-## 📄 Licence
+## Licence
 
 Ce projet est réalisé dans un cadre académique pour le MBA Big Data & IA.
 
 ---
 
-## 🙏 Remerciements
+## Remerciements
 
 Merci à Monsieur François Cortezon ainsi qu'aux enseignants du MBA Big Data & IA pour leur accompagnement.
 
