@@ -1,8 +1,8 @@
 .DS_Store
 
 
-# .streamlit/secrets.toml
-# *.toml
+.streamlit/secrets.toml
+*.toml
 
 
 __pycache__/
