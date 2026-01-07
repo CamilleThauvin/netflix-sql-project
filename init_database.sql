@@ -24,9 +24,7 @@
 DROP TABLE IF EXISTS viewing_history CASCADE;
 DROP TABLE IF EXISTS streaming_sessions CASCADE;
 DROP TABLE IF EXISTS watch_progress CASCADE;
-DROP TABLE IF EXISTS downloads CASCADE;
 DROP TABLE IF EXISTS payments CASCADE;
-DROP TABLE IF EXISTS subscription_changes CASCADE;
 DROP TABLE IF EXISTS customer_subscriptions CASCADE;
 DROP TABLE IF EXISTS movies CASCADE;
 DROP TABLE IF EXISTS customers CASCADE;
@@ -80,9 +78,6 @@ DROP TABLE IF EXISTS countries CASCADE;
 \i 'tables/subscriptions/02_customer_subscriptions.sql'
 \echo '   ✓ Table customer_subscriptions créée'
 
-\i 'tables/subscriptions/03_subscription_changes.sql'
-\echo '   ✓ Table subscription_changes créée'
-
 \i 'tables/subscriptions/04_payments.sql'
 \echo '   ✓ Table payments créée'
 
@@ -95,9 +90,6 @@ DROP TABLE IF EXISTS countries CASCADE;
 
 \i 'tables/streaming/03_watch_progress.sql'
 \echo '   ✓ Table watch_progress créée'
-
-\i 'tables/streaming/04_downloads.sql'
-\echo '   ✓ Table downloads créée'
 
 \echo ''
 
@@ -129,8 +121,6 @@ SELECT 'movies', COUNT(*) FROM movies
 UNION ALL
 SELECT 'customer_subscriptions', COUNT(*) FROM customer_subscriptions
 UNION ALL
-SELECT 'subscription_changes', COUNT(*) FROM subscription_changes
-UNION ALL
 SELECT 'payments', COUNT(*) FROM payments
 UNION ALL
 SELECT 'streaming_sessions', COUNT(*) FROM streaming_sessions
@@ -138,28 +128,9 @@ UNION ALL
 SELECT 'viewing_history', COUNT(*) FROM viewing_history
 UNION ALL
 SELECT 'watch_progress', COUNT(*) FROM watch_progress
-UNION ALL
-SELECT 'downloads', COUNT(*) FROM downloads
 ORDER BY table_name;
 
 \echo ''
 \echo '=================================================='
 \echo 'INITIALISATION TERMINÉE AVEC SUCCÈS !'
-\echo '=================================================='
-\echo ''
-\echo 'Tables créées :'
-\echo '  - countries (20 lignes)'
-\echo '  - categories (20 lignes)'
-\echo '  - subscription_plans (5 lignes)'
-\echo '  - customers (50 lignes)'
-\echo '  - movies (20 lignes)'
-\echo '  - customer_subscriptions (50 lignes)'
-\echo '  - subscription_changes (26+ lignes)'
-\echo '  - payments (38+ lignes)'
-\echo '  - streaming_sessions (100+ lignes)'
-\echo '  - viewing_history (58+ lignes)'
-\echo '  - watch_progress (27+ lignes)'
-\echo '  - downloads (32+ lignes)'
-\echo ''
-\echo 'Vous pouvez maintenant exécuter les requêtes dans queries/'
 \echo '=================================================='
