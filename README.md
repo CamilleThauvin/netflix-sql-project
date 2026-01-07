@@ -36,7 +36,7 @@ Ce projet simule l'évolution d'une base de données Netflix, de ses débuts en 
 
 ## Fonctionnalités
 
-Notre projet se concentre sur **deux fonctionnalités principales** :
+Notre projet se concentre sur **trois fonctionnalités principales** :
 
 ### 1. Système d'Abonnements Multi-niveaux
 - Gestion de plans d'abonnement (Basic, Standard, Premium, Mobile, Family)
@@ -49,6 +49,13 @@ Notre projet se concentre sur **deux fonctionnalités principales** :
 - Historique complet de visionnage par client
 - Progression de lecture avec bookmarks (reprendre là où on s'est arrêté)
 - Analytics avancés : temps de visionnage, films populaires, engagement utilisateurs
+
+### 3. Dashboard Interactif de Prévention du Churn
+- Visualisation en temps réel des métriques de churn
+- Identification automatique des clients à risque (4 niveaux : Critique, Élevé, Moyen, Faible)
+- Analyse comparative par plan d'abonnement
+- Système d'alertes et recommandations d'actions
+- Export des données pour campagnes de rétention
 
 ---
 
@@ -121,13 +128,22 @@ Notre projet se concentre sur **deux fonctionnalités principales** :
 git clone https://github.com/lucaslgk/netflix-sql-project.git
 cd netflix-sql-project
 ```
+2. **Connexion à PostgreSQL**
+```bash
+psql -U postgres
+```
 
-2. **Créer la base de données**
+3. **Créer la base de données**
 ```sql
 CREATE DATABASE netflix_db;
 ```
 
-3. **Exécuter le script d'initialisation complet**
+4. **Retour dans PowerShell**
+```sql
+\q
+```
+
+4. **Exécuter le script d'initialisation complet**
 
 Option A - Via psql en ligne de commande :
 ```bash
@@ -335,24 +351,119 @@ netflix-sql-project/
 - [PostgreSQL Tutorial](https://www.postgresqltutorial.com/)
 - [W3Schools SQL](https://www.w3schools.com/sql/)
 
-### Bonnes Pratiques SQL
-- Nommer les tables au pluriel (`customers`, `subscriptions`)
-- Utiliser `snake_case` pour les colonnes (`customer_id`, `first_name`)
-- Toujours définir une clé primaire (`PRIMARY KEY`)
-- Commenter les requêtes complexes
-- Utiliser des transactions pour les opérations critiques
+
+---
+
+## 📊 Dashboard Streamlit - Analyse du Churn
+
+### Présentation
+
+Le dashboard interactif Streamlit permet d'analyser en temps réel le risque de churn et d'identifier les clients à risque pour mettre en place des actions de rétention ciblées.
+
+### Fonctionnalités du Dashboard
+
+#### Vue d'ensemble
+- Métriques clés : Total clients, Clients actifs, Clients churnés, Taux de churn
+- KPIs visuels avec indicateurs de tendance
+
+#### Analyse par Plan
+- Taux de churn par plan d'abonnement
+- Temps de visionnage moyen par plan
+- Comparaison de l'engagement entre les plans
+
+#### Détection des Clients à Risque
+Le dashboard identifie automatiquement les clients à risque selon 4 niveaux :
+
+- **🔴 CRITIQUE** : Clients sans aucune session de visionnage
+- **🟠 ÉLEVÉ** : Inactifs depuis plus de 30 jours
+- **🟡 MOYEN** : Inactifs depuis plus de 14 jours avec faible engagement (<100 min)
+- **🟢 FAIBLE** : Utilisateurs actifs avec bon engagement
+
+#### Système d'Alertes
+- Alertes automatiques pour les clients à risque critique et élevé
+- Recommandations d'actions personnalisées
+- Priorisation des interventions
+
+#### Filtres et Export
+- Filtrage par niveau de risque et plan d'abonnement
+- Export CSV de la liste des clients à risque pour campagnes marketing
+
+### Installation et Lancement
+
+#### 1. Installer les dépendances
+```bash
+pip install -r requirements.txt
+```
+
+#### 2. Configurer la connexion à la base de données
+
+Éditez le fichier [.streamlit/secrets.toml](.streamlit/secrets.toml) avec vos identifiants PostgreSQL :
+
+```toml
+DB_HOST = "localhost"
+DB_PORT = 5432
+DB_NAME = "netflix_db"
+DB_USER = "postgres"
+DB_PASSWORD = "votre_mot_de_passe"
+```
+
+#### 3. Lancer le dashboard
+```bash
+streamlit run streamlit_churn_dashboard.py
+```
+
+### Captures d'écran
+
+#### Métriques Globales
+- Vue en temps réel du taux de churn
+- Répartition clients actifs/churnés
+
+#### Analyse par Plan
+- Graphiques comparatifs du churn par plan
+- Engagement utilisateur par plan
+
+#### Liste des Clients à Risque
+- Tableau interactif avec filtres
+- Coloration par niveau de risque
+- Informations détaillées (sessions, temps de visionnage, inactivité)
+
+### Cas d'Usage
+
+#### Pour l'Équipe Marketing
+- Exporter la liste des clients à risque critique pour campagne email urgente
+- Segmenter les clients par niveau de risque pour actions différenciées
+- Analyser les plans avec le plus fort churn
+
+#### Pour le Product Manager
+- Identifier les plans nécessitant des améliorations
+- Corréler engagement et rétention
+- Prioriser les features pour augmenter l'engagement
+
+#### Pour le Customer Success
+- Liste priorisée des clients à contacter
+- Contexte détaillé sur l'utilisation de chaque client
+- Suivi de l'évolution du churn dans le temps
+
+### Technologies Utilisées
+
+- **Streamlit 1.31** : Framework de dashboard interactif
+- **Plotly 5.18** : Bibliothèque de visualisation interactive
+- **Pandas 2.2** : Manipulation de données
+- **psycopg2** : Connexion PostgreSQL
 
 ---
 
 ## 🎓 Contexte Académique
 
 ### Objectifs Pédagogiques Atteints
-✅ Application des concepts de normalisation de bases de données  
-✅ Maîtrise des jointures (INNER JOIN, LEFT JOIN)  
-✅ Utilisation avancée de GROUP BY, HAVING, agrégations  
-✅ Création de requêtes analytiques complexes  
-✅ Collaboration en équipe avec Git/GitHub  
-✅ Documentation technique professionnelle  
+✅ Application des concepts de normalisation de bases de données
+✅ Maîtrise des jointures (INNER JOIN, LEFT JOIN)
+✅ Utilisation avancée de GROUP BY, HAVING, agrégations
+✅ Création de requêtes analytiques complexes
+✅ Collaboration en équipe avec Git/GitHub
+✅ Documentation technique professionnelle
+✅ Développement d'un dashboard interactif avec Streamlit
+✅ Implémentation d'un système d'analyse prédictive du churn  
 
 ---
 
