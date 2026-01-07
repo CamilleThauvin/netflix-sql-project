@@ -449,16 +449,3 @@ INSERT INTO viewing_history (customer_id, movie_id, watch_date, percent_watched,
 (27, 15, '2024-07-20', 100.00, 1),
 (28, 3, '2024-07-20', 100.00, 1);
 
--- =====================================================
--- FIN DU FICHIER DE DONNÉES
--- =====================================================
--- Total des lignes insérées :
--- - countries: 20 lignes
--- - categorie: 20 lignes
--- - subscription_plans: 5 lignes
--- - customers: 50 lignes
--- - movies: 20 lignes
--- - customer_subscriptions: 50 lignes
--- - streaming_sessions: 100 lignes
--- - viewing_history: 58 lignes
--- =====================================================
