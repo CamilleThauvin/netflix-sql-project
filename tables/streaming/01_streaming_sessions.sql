@@ -1,36 +1,37 @@
--- 01_streaming_sessions.sql
--- Nombre de sessions de visionnage par film / client
+-- ==============================================
+-- TABLE : STREAMING_SESSIONS (Sessions de visionnage)
+-- ==============================================
+-- Enregistre chaque session de visionnage d'un client
 
--- Top 10 films les plus lancés
-SELECT 
-    m.title,
-    COUNT(*) as nb_sessions,
-    ROUND(AVG(ss.session_duration_minutes), 1) as duree_moyenne_minutes
-FROM streaming_sessions ss
-JOIN movies m ON ss.movie_id = m.movie_id
-GROUP BY m.movie_id, m.title
-ORDER BY nb_sessions DESC
-LIMIT 10;
-
--- Sessions par jour
-SELECT 
-    DATE_TRUNC('day', session_start_time) as jour,
-    COUNT(*) as nb_sessions
-FROM streaming_sessions
-GROUP BY jour
-ORDER BY jour DESC
-LIMIT 7;
-
--- Table des sessions de visionnage
 CREATE TABLE IF NOT EXISTS streaming_sessions (
-    session_id SERIAL PRIMARY KEY,
-    customer_id INT NOT NULL,
-    movie_id INT NOT NULL,
-    session_start_time TIMESTAMP NOT NULL,
-    session_duration_minutes INT,
-    device_type VARCHAR(20),  -- 'mobile', 'tv', 'web'
-    
-    CONSTRAINT fk_sessions_customer FOREIGN KEY (customer_id) REFERENCES customers(customer_id),
-    CONSTRAINT fk_sessions_movie FOREIGN KEY (movie_id) REFERENCES movies(movie_id)
+    session_id SERIAL PRIMARY KEY,                   -- ID unique de la session
+    customer_id INT NOT NULL,                        -- ID du client
+    movie_id INT NOT NULL,                           -- ID du film/série regardé
+    session_start_time TIMESTAMP NOT NULL,           -- Heure de début de la session
+    session_duration_minutes INT,                    -- Durée de visionnage en minutes
+    device_type VARCHAR(20),                         -- Type d'appareil: 'mobile', 'tv', 'web', 'tablet'
+
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    -- Clés étrangères
+    CONSTRAINT fk_sessions_customer
+        FOREIGN KEY (customer_id)
+        REFERENCES customers(customer_id),
+
+    CONSTRAINT fk_sessions_movie
+        FOREIGN KEY (movie_id)
+        REFERENCES movies(movie_id),
+
+    -- Contraintes métier
+    CONSTRAINT chk_device_type
+        CHECK (device_type IN ('mobile', 'tv', 'web', 'tablet')),
+
+    CONSTRAINT chk_duration_positive
+        CHECK (session_duration_minutes >= 0)
 );
 
+-- Index pour améliorer les performances
+CREATE INDEX IF NOT EXISTS idx_streaming_sessions_customer ON streaming_sessions(customer_id);
+CREATE INDEX IF NOT EXISTS idx_streaming_sessions_movie ON streaming_sessions(movie_id);
+CREATE INDEX IF NOT EXISTS idx_streaming_sessions_start_time ON streaming_sessions(session_start_time);
+CREATE INDEX IF NOT EXISTS idx_streaming_sessions_device ON streaming_sessions(device_type);
