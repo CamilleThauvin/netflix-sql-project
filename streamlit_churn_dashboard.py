@@ -40,6 +40,7 @@ st.markdown("""
         border-left: 5px solid #E50914;
         border-radius: 5px;
         margin: 1rem 0;
+        color: #000000;
     }
     .alert-medium {
         background-color: #fff4cc;
@@ -47,6 +48,7 @@ st.markdown("""
         border-left: 5px solid #FFA500;
         border-radius: 5px;
         margin: 1rem 0;
+        color: #000000;
     }
     .alert-low {
         background-color: #ccffcc;
