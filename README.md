@@ -302,20 +302,26 @@ netflix-sql-project/
 
 ## Dashboard Streamlit - Analyse du Churn
 
+<img width="1894" height="741" alt="image" src="https://github.com/user-attachments/assets/61a683ae-ae39-423d-8b0c-73ac66d0bc61" />
+
 ### Présentation
 
 Le dashboard interactif Streamlit permet d'analyser en temps réel le risque de churn et d'identifier les clients à risque pour mettre en place des actions de rétention ciblées.
 
 ### Fonctionnalités du Dashboard
 
-#### Vue d'ensemble
-- Métriques clés : Total clients, Clients actifs, Clients churnés, Taux de churn
-- KPIs visuels avec indicateurs de tendance
+#### Distribution de l'activité des clients
+- Répartition des clients par niveaux d'activités
+- KPIs visuels et métriques clés
+
+<img width="1332" height="742" alt="image" src="https://github.com/user-attachments/assets/be376d59-1093-4284-90a5-2e0194054273" />
 
 #### Analyse par Plan
 - Taux de churn par plan d'abonnement
 - Temps de visionnage moyen par plan
 - Comparaison de l'engagement entre les plans
+
+<img width="1383" height="907" alt="image" src="https://github.com/user-attachments/assets/93ef00f5-57bc-4b7f-abe3-adb2c0484278" />
 
 #### Détection des Clients à Risque
 Le dashboard identifie automatiquement les clients à risque selon 4 niveaux :
@@ -325,14 +331,21 @@ Le dashboard identifie automatiquement les clients à risque selon 4 niveaux :
 - **🟡 MOYEN** : Inactifs depuis plus de 14 jours avec faible engagement (<100 min)
 - **🟢 FAIBLE** : Utilisateurs actifs avec bon engagement
 
+<img width="1376" height="688" alt="image" src="https://github.com/user-attachments/assets/281c48c5-6715-4573-9f26-b9b7647413d0" />
+
 #### Système d'Alertes
 - Alertes automatiques pour les clients à risque critique et élevé
 - Recommandations d'actions personnalisées
 - Priorisation des interventions
 
+<img width="1370" height="801" alt="image" src="https://github.com/user-attachments/assets/5825fa13-b167-41a3-a82b-17306666c2aa" />
+
 #### Filtres et Export
 - Filtrage par niveau de risque et plan d'abonnement
 - Export CSV de la liste des clients à risque pour campagnes marketing
+
+<img width="1365" height="248" alt="image" src="https://github.com/user-attachments/assets/6e61b7f6-3a73-4985-9b0c-31e983fbd0a3" />
+
 
 ### Installation et Lancement
 
