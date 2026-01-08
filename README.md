@@ -130,7 +130,7 @@ Notre projet se concentre sur **trois fonctionnalités principales** :
 
 1. **Cloner le dépôt**
 ```bash
-git clone https://github.com/lucaslgk/netflix-sql-project.git
+git clone https://github.com/CamilleThauvin/netflix-sql-project.git
 cd netflix-sql-project
 ```
 2. **Connexion à PostgreSQL**
