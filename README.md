@@ -286,8 +286,8 @@ netflix-sql-project/
 | Nom | Rôle | Contribution Principale |
 |-----|------|------------------------|
 | Camille Thauvin | Project Manager | 3 tables référentiels + 1 requête analytics + Diagramme ERD |
-| Ines Taibi | Business Analyst | 3 tables abonnements + 2 requêtes revenus |
-| Myriam Benani | Streaming Product Manager | 2 tables streaming + 3 requêtes analytics visionnage |
+| Myriam Benani | Business Analyst | 3 tables abonnements + 2 requêtes revenus |
+| Ines Taibi  | Streaming Product Manager | 2 tables streaming + 3 requêtes analytics visionnage |
 | Ines Hideche | Data Analyst | 1 table movies + 3 requêtes analytics avancées (ARPU, engagement) |
 | Aghilas Aissaoui | Data Quality Manager | 1 table streaming + 3 requêtes SELECT + Données de test |
 | Lucas Goumard | Product Owner | 3 requêtes analytics (KPIs, churn) + Script init + Git/Documentation |
