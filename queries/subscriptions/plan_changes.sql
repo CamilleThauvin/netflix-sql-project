@@ -21,5 +21,4 @@ GROUP BY
     c.email
 ORDER BY
     plan_changes_count DESC,
-    c.customer_id
-LIMIT 20;
+    c.customer_id;
