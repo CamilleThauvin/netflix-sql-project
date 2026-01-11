@@ -221,12 +221,19 @@ Le script `init_database.sql` effectue automatiquement :
 
 ## Structure du Projet
 
+## Structure du Projet
+
 ```
 netflix-sql-project/
 │
 ├── 📄 README.md                          # Documentation principale
 ├── 📄 init_database.sql                  # Script d'initialisation complet
 ├── 📄 .gitignore                         # Fichiers Git ignorés
+├── 📄 requirements.txt                   # Dépendances Python pour le dashboard
+├── 📄 streamlit_churn_dashboard.py       # Dashboard interactif Streamlit
+│
+├── 📂 .streamlit/
+│   └── secrets.toml                      # Configuration PostgreSQL (ignoré par Git)
 │
 ├── 📂 tables/                            # Scripts de création des tables (DDL)
 │   ├── 📂 subscriptions/
