@@ -3,6 +3,7 @@
 
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=flat&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
 [![SQL](https://img.shields.io/badge/SQL-Database-blue)](https://www.w3schools.com/sql/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat&logo=streamlit&logoColor=white)](https://streamlit.io/)
 [![Git](https://img.shields.io/badge/Git-Version%20Control-orange)](https://git-scm.com/)
 
 ---
@@ -27,15 +28,33 @@
 
 ## À Propos du Projet
 
-Ce projet simule l'évolution d'une base de données Netflix, de ses débuts en tant que service de location de DVD vers sa transformation en plateforme de streaming moderne. 
+Ce projet académique développe une **base de données complète simulant l'évolution de Netflix** 
+du modèle de location de DVD vers une plateforme de streaming moderne, avec un **système 
+d'analyse prédictive du churn** intégré.
+
+Le projet combine :
+- **Architecture de base de données** : 10 tables interconnectées couvrant la gestion des 
+  abonnements, le streaming, les paiements et l'engagement utilisateur
+- **Requêtes analytiques avancées** : Plus de 15 requêtes SQL pour générer des insights métier 
+  (revenus, engagement, rétention)
+- **Dashboard interactif de churn** : Application Streamlit permettant d'identifier et de 
+  prioriser les clients à risque de désabonnement selon 4 niveaux de criticité
+- **Données réalistes** : 393 lignes de données de test simulant des comportements utilisateurs 
+  variés (actifs, inactifs, à risque)
+
+**Objectif principal** : Démontrer comment une base de données bien conçue peut servir de 
+fondation à des outils décisionnels concrets pour optimiser la rétention client et maximiser 
+le lifetime value.
 
 **Contexte Académique :** Projet SQL réalisé dans le cadre du MBA Big Data & IA, démontrant la maîtrise de la conception de bases de données relationnelles, des requêtes SQL complexes et de l'analyse de données.
 
 ### Objectifs Pédagogiques
--  Conception et modélisation de bases de données relationnelles
--  Maîtrise des concepts SQL avancés (JOIN, GROUP BY, agrégations)
--  Création de requêtes analytiques pour générer des insights métier
--  Gestion de projets collaboratifs avec Git/GitHub
+✅ Conception et modélisation de bases de données relationnelles
+✅ Maîtrise des concepts SQL avancés (JOIN, GROUP BY, agrégations)
+✅ Création de requêtes analytiques pour générer des insights métier
+✅ Développement d'un système de scoring prédictif (analyse du churn)
+✅ Visualisation de données avec dashboard interactif (Streamlit + Plotly)
+✅ Gestion de projets collaboratifs avec Git/GitHub
 
 ---
 
@@ -59,7 +78,7 @@ Notre projet se concentre sur **trois fonctionnalités principales** :
 - Visualisation en temps réel des métriques de churn
 - Identification automatique des clients à risque (4 niveaux : Critique, Élevé, Moyen, Faible)
 - Analyse comparative par plan d'abonnement
-- Système d'alertes et recommandations d'actions
+- Système d'alertes et recommandations d'actions personnalisées
 - Export des données pour campagnes de rétention
 
 ---
@@ -286,8 +305,6 @@ netflix-sql-project/
 
 ### Modélisation
 - **dbdiagram.io** - Création de diagrammes ERD
-- **Draw.io** - Diagrammes et schémas
-
 ---
 
 ## Ressources et Documentation
@@ -424,4 +441,4 @@ Merci à Monsieur François Cortezon ainsi qu'aux enseignants du MBA Big Data & 
 ---
 
 
-**Dernière mise à jour :07 Janvier 2026
+**Dernière mise à jour :11 Janvier 2026
